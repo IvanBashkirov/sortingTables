@@ -1,0 +1,53 @@
+<div class='container text-center'>
+  <h1>
+    <a ui-sref="landing" class="btn btn-info pull-left">
+      <i class="fa fa-arrow-circle-left fa-2x"></i>
+    </a>
+    {{profile.person.first_name}}{{profile.person.last_name}}
+  </h1>
+
+  <i ng-class="profile.genderFAIcon(profile.person.gender)"></i>
+  <small>{{profile.person.email}}</small>
+</div>
+
+<div class="polecat-search-bar col-md-offset-4 col-md-4">
+  <div class="row">
+    <input type="text" placeholder="Search by name or e-mail" ng-model="profile.mySearch" uib-typeahead="state for state in profile.typeaheadValues | filter:$viewValue | limitTo:3" class="form-control">
+  </div>
+  <div class="row text-center sorting-toolbar ">
+    <p>Sort by:</p>
+    <div class="btn-group">
+      <label aria-label="id-sort" class="btn btn-info" ng-model="profile.sort" uib-btn-radio="'id'">ID
+      </label>
+      <label aria-label="first-name-sort" class="btn btn-info" ng-model="profile.sort" uib-btn-radio="'first_name'">First Name
+      </label>
+      <label aria-label="last-name-sort" class="btn btn-info" ng-model="profile.sort" uib-btn-radio="'last_name'">Second Name</label>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6" ng-repeat="friend in profile.matchedFriends | orderBy: profile.sort">
+  <div class="col-md-11 friend-card well">
+    <div class="friend-profile-picture" ng-style="{'background-image': 'url({{friend.picture}})'}"></div>
+    <div class='friend-card-info'>
+      <table class='table'>
+        <tbody>
+          <tr>
+            <th>First Name</th>
+            <td>{{friend.first_name}}</td>
+          </tr>
+          <tr>
+            <th>Second Name</th>
+            <td>{{friend.last_name}}</td>
+          </tr>
+          <tr>
+            <th>E-mail</th>
+            <td>{{friend.email}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="col-md-1"></div>
+</div>
+</div>
