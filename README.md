@@ -1,7 +1,5 @@
 # Exercise
 
-After a successful telephone interview, to progress your application to Polecat we'd like to ask you to complete an exercise in your own time.
-
 You have been provided with a sample data file - data.json (the data is generated, these are not real people). We'd like you to assemble a very simple web application (HTML, CSS, JS) using whichever frameworks, libraries, build tools, dependency trackers etc. you are most confident in using. Please complete as many of the following tasks as you can in the time available, then zip up your solution and email it back to us.
 
 ## What we're looking for
